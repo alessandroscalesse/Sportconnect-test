@@ -101,15 +101,17 @@ export const findVenuesAI = async (query: string, lat: number, lng: number): Pro
       model: MODEL_ID,
       contents: `Find the best sports venues for this request: "${query}". Provide a short summary recommendation.`,
       config: {
-        tools: [{ googleMaps: {} }],
+        // @ts-ignore - Suppress TS error for googleMaps tool in this SDK version
+        tools: [{ googleMaps: {} } as any],
         toolConfig: {
+          // @ts-ignore - Suppress TS error for retrievalConfig in this SDK version
           retrievalConfig: {
             latLng: {
               latitude: lat,
               longitude: lng
             }
           }
-        }
+        } as any
       },
     });
 
