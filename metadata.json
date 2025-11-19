@@ -1,0 +1,7 @@
+{
+  "name": "SportConnect",
+  "description": "A mobile-first social platform to connect athletes, organize matches, and track performance using AI.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
